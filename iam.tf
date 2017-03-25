@@ -1,21 +1,21 @@
 resource "aws_iam_user" "jenkins" {
-  name = "jenkins"
+  name = "${var.iam_user"
 }
 
 resource "aws_iam_access_key" "jenkins" {
   user    = "${aws_iam_user.jenkins.name}"
-  pgp_key = "${var.encrypt_pgp_key}"
+  pgp_key = "${var.pgp_key}"
 }
 
 resource "aws_iam_user_policy" "jenkins_manage_ec2_slaves" {
-  name = "jenkins-manage-ec2-slaves"
+  name = "${var,name}-manage-ec2-slaves"
   user = "${aws_iam_user.jenkins.name}"
   policy = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "Stmt1312295543082",
+            "Sid": "*",
             "Action": [
                 "ec2:DescribeSpotInstanceRequests",
                 "ec2:CancelSpotInstanceRequests",

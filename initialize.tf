@@ -2,18 +2,34 @@ variable "key_pair" {
   type = "string"
 }
 
-variable "jenkins_slaves_pub_key" {
+variable "ami_linux" {
   type = "string"
 }
 
-variable "aws_vpc_id" {
+variable "ami_windows" {
   type = "string"
 }
 
-variable "aws_subnet_id" {
+variable "master_instance_type" {
   type = "string"
 }
 
-variable "encrypt_pgp_key" {
+variable "linux_slave_instance_type" {
+  type = "string"
+}
+
+variable "windows_slave_instance_type" {
+  type = "string"
+}
+
+variable "slaves_key" {
+  type = "string"
+}
+
+variable "subnet_id" {
+  type = "string"
+}
+
+variable "pgp_key" {
   type = "string"
 }
